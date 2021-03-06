@@ -1,0 +1,113 @@
+{
+  "screenName": "Home",
+  "children": [
+    {
+      "buttonName": "JS",
+      "final": false,
+      "children": [
+        {
+          "buttonName": "Common Flavors",
+          "final": false,
+          "children": [
+            {
+              "buttonName": "React",
+              "final": false
+            },
+            {
+              "buttonName": "Node",
+              "final": false
+            }
+          ]
+        },
+        {
+          "buttonName": "MATH",
+          "final": false
+        },
+        {
+          "buttonName": "HTML",
+          "final": false
+        },
+        {
+          "buttonName": "Function By Data Type",
+          "final": false
+        },
+        {
+          "buttonName": "variable declarations",
+          "final": false
+        },
+        {
+          "buttonName": "Variables",
+          "final": false
+        },
+        {
+          "buttonName": "C",
+          "final": false
+        },
+        {
+          "buttonName": "C#",
+          "final": false
+        },
+        {
+          "buttonName": "recently used",
+          "final": false
+        },
+        {
+          "buttonName": "System Controls",
+          "final": false
+        },
+        {
+          "buttonName": "Boilers",
+          "final": false
+        },
+        {
+          "buttonName": "Settings",
+          "final": false
+        }
+      ]
+    },
+    {
+      "buttonName": "Python",
+      "final": false
+    },
+    {
+      "buttonName": "HTML",
+      "final": false
+    },
+    {
+      "buttonName": "Java",
+      "final": false
+    },
+    {
+      "buttonName": "CLI",
+      "final": false
+    },
+    {
+      "buttonName": "Variables",
+      "final": false
+    },
+    {
+      "buttonName": "C",
+      "final": false
+    },
+    {
+      "buttonName": "C#",
+      "final": false
+    },
+    {
+      "buttonName": "C++",
+      "final": false
+    },
+    {
+      "buttonName": "System Controls",
+      "final": false
+    },
+    {
+      "buttonName": "Boilers",
+      "final": false
+    },
+    {
+      "buttonName": "Settings",
+      "final": false
+    }
+  ]
+}
