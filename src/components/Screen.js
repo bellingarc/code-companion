@@ -1,9 +1,5 @@
 import React, { useState, createContext } from "react"
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route
-} from "react-router-dom"
+import {  BrowserRouter as Router,  Switch,  Route} from "react-router-dom"
 import HomeScreen from "./macros/Home/Home"
 import languages from "./macros/Home/Home2"
 import LanguageMenu from "./macros/Home/LanguageMenu"
@@ -12,6 +8,7 @@ const user = require("../userProfile.json")
 export const UserContext = createContext(null)
 function Screen() {
   const [languageSelection, setLanguageSelection] = useState()
+
   return (
     <UserContext.Provider value={{languageSelection, setLanguageSelection}}>
     <Router>
