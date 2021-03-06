@@ -1,8 +1,9 @@
-import React from "react"
+import React, { useContext } from "react"
 
 import { useParams, Link, useHistory  } from "react-router-dom"
 import LanguageMenu from "./LanguageMenu"
 import languages from './Home2'
+import { UserContext } from "../../Screen"
 function renderLanguageMenu(item, setLanguageSelection, history) {
   
   const languageIndex = languages.findIndex(element => element.parentName === item)
@@ -11,7 +12,8 @@ function renderLanguageMenu(item, setLanguageSelection, history) {
   history.push("/languageMenu")
 }
 
-function HomeScreen({setLanguageSelection}) { 
+function HomeScreen() { 
+  const { setLanguageSelection } =useContext(UserContext)
   const history=useHistory()
   return (
     <>

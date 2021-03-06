@@ -20,10 +20,10 @@ function Screen() {
           <LanguageMenu languageSelection={languageSelection}/>
         </Route>
         <Route exact path="/home">
-          <HomeScreen setLanguageSelection={setLanguageSelection} />
+          <HomeScreen />
         </Route>
         <Route exact path="/">
-          <HomeScreen setLanguageSelection={setLanguageSelection} />
+          <HomeScreen />
         </Route>
       </Switch>
     </Router>
