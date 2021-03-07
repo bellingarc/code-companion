@@ -1,8 +1,9 @@
 import React, { useState, createContext } from "react"
 import {  BrowserRouter as Router,  Switch,  Route} from "react-router-dom"
-import HomeScreen from "./macros/Home/Home"
-import languages from "./macros/Home/Home2"
-import LanguageMenu from "./macros/Home/LanguageMenu"
+import HomeScreen from "./macros/Home"
+import languages from "./macros/Home2"
+import LanguageMenu from "./macros/LanguageMenu"
+import ContentMenu from "./macros/ContentMenu"
 import "./Screen.css"
 const user = require("../userProfile.json")
 export const UserContext = createContext(null)
@@ -13,6 +14,9 @@ function Screen() {
     <UserContext.Provider value={{languageSelection, setLanguageSelection}}>
     <Router>
       <Switch>
+        <Route exact path="/contentMenu">
+          <ContentMenu languageSelection={languageSelection}/>
+        </Route>
         <Route exact path="/languageMenu">
           <LanguageMenu languageSelection={languageSelection}/>
         </Route>
