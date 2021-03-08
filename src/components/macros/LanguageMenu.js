@@ -1,10 +1,20 @@
-import React, { useContext } from "react"
+import React, { useState, useContext } from "react"
 import { useHistory } from "react-router-dom"
 import { UserContext } from "../Screen"
 
 function LanguageMenu({ languageSelection }) {
   const { setLanguageSelection } = useContext(UserContext)
   const history = useHistory()
+  const [copySuccess, setCopySuccess] = useState('')
+
+  const copyToClipBoard = async copyMe => {
+    try {
+      await navigator.clipboard.writeText(copyMe);
+      setCopySuccess('Copied!');
+    } catch (err) {
+      setCopySuccess('Failed to copy!');
+    }
+  }
 
   function renderLanguageContentsMenu(item, setLanguageSelection) {
     const contentIndex = languageSelection.findIndex(
@@ -30,7 +40,7 @@ function LanguageMenu({ languageSelection }) {
           return (
             <button
               key={language.contentName}
-              onClick={() =>
+              onClick={() =>language.final ? copyToClipBoard(language.code) :
                 renderLanguageContentsMenu(
                   language.contentName,
                   setLanguageSelection,

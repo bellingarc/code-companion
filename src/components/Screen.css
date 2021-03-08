@@ -2,7 +2,7 @@
   display: grid;
   size: 100%;
   grid-template-columns: 32vw 32vw 32vw;
-  grid-template-rows: 5vh 22vh 22vh 23vh 22vh;
+  grid-template-rows: 22vh 22vh 23vh 22vh;
   background-color: #2196F3;
 
 }

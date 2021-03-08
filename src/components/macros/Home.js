@@ -6,18 +6,19 @@ import { UserContext } from "../Screen"
 function HomeScreen() {
   const { setLanguageSelection } = useContext(UserContext)
   const history = useHistory()
+
   function renderLanguageMenu(item, setLanguageSelection) {
-  const languageIndex = languages.findIndex(
-    (element) => element.parentName === item
-  )
-  const languageContents = languages[languageIndex].contents
-  setLanguageSelection(languageContents)
-  history.push("/languageMenu")
-}
-function renderHomeScreen(setLanguageSelection) {
+    const languageIndex = languages.findIndex(
+      (element) => element.parentName === item
+      )
+    const languageContents = languages[languageIndex].contents
+    setLanguageSelection(languageContents)
+    history.push("/languageMenu")
+  }
+  function renderHomeScreen(setLanguageSelection) {
   setLanguageSelection(null)
   history.push("/home")
-}
+  }
   return (
     <>
       <button></button>

@@ -30,7 +30,7 @@ function ContentMenu({ languageSelection }) {
           return (
             <button
               key={language.attName}
-              onClick={() => copyToClipBoard(language.code)}
+              onClick={() => language.final ? copyToClipBoard(language.code) : console.log('render')}
             >
               {language.attName}
             </button>
