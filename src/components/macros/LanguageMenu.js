@@ -1,7 +1,6 @@
 import React, { useContext } from "react"
 import { useHistory } from "react-router-dom"
 import { UserContext } from "../Screen"
-import languages from "./Home2"
 
 function LanguageMenu({ languageSelection }) {
   const { setLanguageSelection } = useContext(UserContext)
@@ -26,7 +25,6 @@ function LanguageMenu({ languageSelection }) {
       <button onClick={() => renderHomeScreen(setLanguageSelection)}>
         Home
       </button>
-      <p>LanguageMenu</p>
       <div className="grid-container">
         {languageSelection.map((language) => {
           return (

@@ -1,12 +1,20 @@
-import React, { useContext } from "react"
+import React, { useState, useContext } from "react"
 import { useHistory } from "react-router-dom"
 import { UserContext } from "../Screen"
-import languages from "./Home2"
 
 function ContentMenu({ languageSelection }) {
   const { setLanguageSelection } = useContext(UserContext)
   const history = useHistory()
+  const [copySuccess, setCopySuccess] = useState('')
 
+  const copyToClipBoard = async copyMe => {
+    try {
+      await navigator.clipboard.writeText(copyMe);
+      setCopySuccess('Copied!');
+    } catch (err) {
+      setCopySuccess('Failed to copy!');
+    }
+  }
   function renderHomeScreen(setLanguageSelection) {
     setLanguageSelection(null)
     history.push("/home")
@@ -17,13 +25,12 @@ function ContentMenu({ languageSelection }) {
       <button onClick={() => renderHomeScreen(setLanguageSelection)}>
         Home
       </button>
-      <p>ContentMenu</p>
       <div className="grid-container">
         {languageSelection.map((language) => {
           return (
             <button
               key={language.attName}
-              onClick={() => console.log("Howdy")}
+              onClick={() => copyToClipBoard(language.code)}
             >
               {language.attName}
             </button>

@@ -1,13 +1,11 @@
-import React, { useContext } from "react"
-import { useParams, Link, useHistory } from "react-router-dom"
-import LanguageMenu from "./LanguageMenu"
+import React, { useState, useRef, useContext } from "react"
+import {  useHistory } from "react-router-dom"
 import languages from "./Home2"
 import { UserContext } from "../Screen"
 
 function HomeScreen() {
   const { setLanguageSelection } = useContext(UserContext)
   const history = useHistory()
-  
   function renderLanguageMenu(item, setLanguageSelection) {
   const languageIndex = languages.findIndex(
     (element) => element.parentName === item
@@ -22,10 +20,7 @@ function renderHomeScreen(setLanguageSelection) {
 }
   return (
     <>
-      <button
-        onClick={() => renderHomeScreen(setLanguageSelection)}
-      ></button>
-      <p>HomeScreen</p>
+      <button></button>
       <div className="grid-container">
         {languages.map((language) => {
           return (

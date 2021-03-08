@@ -6,7 +6,7 @@ const languages = [
         contentName: "ARBITRARY TAG WITH GLOBAL ATTS",
         code: "<ARB></ARB>",
         attributes: [
-          { attName: "id", code: "id=('')" },
+          { attName: "id", code: " id=('')" },
           { attName: "class", code: " class=('')" },
           { attName: "style", code: " style=('')" },
           { attName: "dir", code: " dir=('')" },

@@ -1,14 +1,14 @@
 .grid-container {
   display: grid;
   size: 100%;
-  grid-template-columns: 30vw 30vw 30vw;
-  grid-template-rows: 5vh 22.5vh 22.5vh 22.5vh 22.5vh;
+  grid-template-columns: 32vw 32vw 32vw;
+  grid-template-rows: 5vh 22vh 22vh 23vh 22vh;
   background-color: #2196F3;
-  padding: 10px;
+
 }
 .grid-item {
   background-color: rgba(231, 12, 12, 0.8);
   border: 1px solid rgba(0, 0, 0, 0.8);
-  padding: 20px;
+
   text-align: center;
 }
