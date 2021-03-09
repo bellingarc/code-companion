@@ -9,10 +9,10 @@ function LanguageMenu({ languageSelection }) {
 
   const copyToClipBoard = async copyMe => {
     try {
-      await navigator.clipboard.writeText(copyMe);
-      setCopySuccess('Copied!');
+      await navigator.clipboard.writeText(copyMe)
+      setCopySuccess('Copied!')
     } catch (err) {
-      setCopySuccess('Failed to copy!');
+      setCopySuccess('Failed to copy!')
     }
   }
 

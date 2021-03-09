@@ -1,8 +1,8 @@
-import React, { useState, useContext } from "react"
+import React, { useState, useContext } from 'react'
 import { useHistory } from "react-router-dom"
 import { UserContext } from "../Screen"
 
-function ContentMenu({ languageSelection }) {
+function SubContentMenu({ languageSelection }) {
   const { setLanguageSelection } = useContext(UserContext)
   const history = useHistory()
   const [copySuccess, setCopySuccess] = useState('')
@@ -20,14 +20,6 @@ function ContentMenu({ languageSelection }) {
     history.push("/home")
   }
 
-  function renderSubContentMenu(item, setLanguageSelection) {
-    const contentIndex = languageSelection.findIndex(
-      (element) => element.attName === item
-    )
-    const contentContents = languageSelection[contentIndex].type
-    setLanguageSelection(contentContents)
-    history.push("/subcontentMenu")
-  }  
   return (
     <>
       <button onClick={() => renderHomeScreen(setLanguageSelection)}>
@@ -37,12 +29,10 @@ function ContentMenu({ languageSelection }) {
         {languageSelection.map((language) => {
           return (
             <button
-              key={language.attName}
-              onClick={() => language.final ? copyToClipBoard(language.code) : renderSubContentMenu(
-                language.attName,
-                setLanguageSelection)}
+              key={language.typeName}
+              onClick={() => language.final ? copyToClipBoard(language.code) : console.log('render')}
             >
-              {language.attName}
+              {language.typeName}
             </button>
           )
         })}
@@ -50,4 +40,5 @@ function ContentMenu({ languageSelection }) {
     </>
   )
 }
-export default ContentMenu
+
+export default SubContentMenu

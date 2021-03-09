@@ -3,6 +3,7 @@ import {  BrowserRouter as Router,  Switch,  Route} from "react-router-dom"
 import HomeScreen from "./macros/Home"
 import LanguageMenu from "./macros/LanguageMenu"
 import ContentMenu from "./macros/ContentMenu"
+import SubContentMenu from "./macros/SubContentMenu"
 import "./Screen.css"
 export const UserContext = createContext(null)
 function Screen() {
@@ -12,6 +13,9 @@ function Screen() {
     <UserContext.Provider value={{languageSelection, setLanguageSelection}}>
     <Router>
       <Switch>
+        <Route exact path="/subcontentMenu">
+          <SubContentMenu languageSelection={languageSelection}/>
+        </Route>
         <Route exact path="/contentMenu">
           <ContentMenu languageSelection={languageSelection}/>
         </Route>
