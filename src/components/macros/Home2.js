@@ -183,60 +183,29 @@ const languages = [
         ],
       },
       {
-        contentName: "HTML Tag",
-        final: true,
-        code: "<html><html/>",
-      },
-      {
-        contentName: "Document Metadata Tags",
-        final: false,
-        attributes: [
-          {
-            attName: "base",
-            final: false,
+        contentName: "Content Sectioning", final:false, attributes: [
+          { attName: "address", code: "<address></address>", final: true },
+          { attName: "article", code: "<article></article>", final: true },
+          { attName: "aside", code: "<aside></aside>", final: true },
+          { attName: "footer", code: "<footer></footer>", final: true },
+          { attName: "header", code: "<header></header>", final: true },
+          { attName: "h#", 
+            final: false, 
             type: [
-              { typeName: "base Tag", code: "<base></base>", final: true },
-
-              { typeName: "href", code: "href=''", final: true },
-              { typeName: "target", code: "target=''", final: true },
-            ],
+            { typeName: "h1", code: "<h1></h1>", final: true },
+            { typeName: "h2", code: "<h2></h2>", final: true },
+            { typeName: "h3", code: "<h3></h3>", final: true },
+            { typeName: "h4", code: "<h4></h4>", final: true },
+            { typeName: "h5", code: "<h5></h5>", final: true },
+            { typeName: "h6", code: "<h6></h6>", final: true },
+            ] 
           },
-          { attName: "head", code: "<head></head>", final: true },
-          {
-            attName: "link",
-            final: false,
-            type: [
-              { typeName: "link Tag", code: "<link>", final: true },
-              { typeName: "as", code: "as=", final: true },
-              { typeName: "crossorigin", code: "crossorigin=", final: true },
-              { typeName: "disabled", code: "disabled=", final: true },
-              { typeName: "href", code: "href=''", final: true },
-              { typeName: "hreflang", code: "hreflang=''", final: true },
-              { typeName: "imagesizes", code: "imagesizes=''", final: true },
-              { typeName: "imagesrcset", code: "imagesrcset=''", final: true },
-              { typeName: "integrity", code: "integrity=", final: true },
-              { typeName: "media", code: "media=''", final: true },
-              { typeName: "prefetch", code: "prefetch=''", final: true },
-              { typeName: "rel", code: "rel=''", final: true },
-              { typeName: "sizes", code: "sizes=''", final: true },
-              { typeName: "title", code: "title=''", final: true },
-              { typeName: "type", code: "type=''", final: true },
-              { typeName: "type", code: "type=''", final: true },
-            ],
-          },
-          {
-            attName: "meta",
-            final: false,
-            type:[
-              { typeName: "charset", code: " charset=''", final: true },
-              { typeName: "content", code: " content=''", final: true },
-              { typeName: "http-equiv", code: " http-equiv=''", final: true },
-              { typeName: "name", code: " name=''", final: true },
-
-            ]
-          }
+          { attName: "main", code: "<main></main>", final: true },
+          { attName: "nav", code: "<nav></nav>", final: true },
+          { attName: "section", code: "<section></section>", final: true },
         ],
       },
+      { contentName:"Text Content" },
       {
         contentName: "Audio/Video Methods",
         final: false,
@@ -320,6 +289,80 @@ const languages = [
           { attName: "volume SET", code: ".volume=", final: true },
         ],
       },
+      {
+        contentName: "HTML Tag",
+        final: true,
+        code: "<html><html/>",
+      },
+      {
+        contentName: "Document Metadata Tags",
+        final: false,
+        attributes: [
+          {
+            attName: "title Tag", code: "<title></title>", final: true 
+          },
+          {
+            attName: "base",
+            final: false,
+            type: [
+              { typeName: "base Tag", code: "<base></base>", final: true },
+
+              { typeName: "href", code: "href=''", final: true },
+              { typeName: "target", code: "target=''", final: true },
+            ],
+          },
+          { attName: "head", code: "<head></head>", final: true },
+          {
+            attName: "link",
+            final: false,
+            type: [
+              { typeName: "link Tag", code: "<link>", final: true },
+              { typeName: "as", code: "as=", final: true },
+              { typeName: "crossorigin", code: "crossorigin=", final: true },
+              { typeName: "disabled", code: "disabled=", final: true },
+              { typeName: "href", code: "href=''", final: true },
+              { typeName: "hreflang", code: "hreflang=''", final: true },
+              { typeName: "imagesizes", code: "imagesizes=''", final: true },
+              { typeName: "imagesrcset", code: "imagesrcset=''", final: true },
+              { typeName: "integrity", code: "integrity=", final: true },
+              { typeName: "media", code: "media=''", final: true },
+              { typeName: "prefetch", code: "prefetch=''", final: true },
+              { typeName: "rel", code: "rel=''", final: true },
+              { typeName: "sizes", code: "sizes=''", final: true },
+              { typeName: "title", code: "title=''", final: true },
+              { typeName: "type", code: "type=''", final: true },
+              { typeName: "type", code: "type=''", final: true },
+            ],
+          },
+          {
+            attName: "meta",
+            final: false,
+            type:[
+              { typeName: "meta Tag", code: "<meta>", final: true },
+              { typeName: "charset", code: " charset=''", final: true },
+              { typeName: "content", code: " content=''", final: true },
+              { typeName: "http-equiv", code: " http-equiv=''", final: true },
+              { typeName: "name", code: " name=''", final: true },
+            ]
+          },
+          {
+            attName: "style",
+            final: false,
+            type:[
+              { typeName: "style Tag", code: "<style></style>", final: true},
+              { typeName: "type", code: " type=''", final: true },
+              { typeName: "media", code: " media=''", final: true },
+              { typeName: "nonce", code: " nonce=''", final: true },
+              { typeName: "title", code: " title=''", final: true },
+            ]
+          },
+        ],
+      },
+      { 
+      contentName: "body Tag",
+      code: "<body></body>", 
+      final:true 
+    },
     ],
   },
   {
