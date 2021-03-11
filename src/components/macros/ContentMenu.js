@@ -34,7 +34,7 @@ function ContentMenu({ languageSelection }) {
         Home
       </button>
       <div className="grid-container">
-        {languageSelection.map((language) => {
+        {languageSelection && languageSelection.map((language) => {
           return (
             <button
               key={language.attName}

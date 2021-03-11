@@ -4,9 +4,10 @@ import firebase from "firebase"
 import { UserContext } from "../Screen"
 import { firebaseConfig } from "../../fbconfig"
 import user from "../../userProfile"
+
 let Mousetrap = require('mousetrap')
 let db;
-let languagesTemp;
+
 function dbAuth() {
   if(!firebase.apps.length)
   firebase.initializeApp(firebaseConfig)
@@ -17,6 +18,16 @@ function HomeScreen() {
   const { setLanguageSelection } = useContext(UserContext)
   const history = useHistory()
   const [languages, setLanguages] = useState([])
+
+  function renderLanguageMenu(item, setLanguageSelection) {
+    console.log({languages})
+    const languageIndex = languages.findIndex(
+      (element) => element.parentName === item
+    )
+    const languageContents = languages[languageIndex].contents
+    setLanguageSelection(languageContents)
+    history.push("/languageMenu")
+  }
 
   useEffect(() => {
     if (!db) {
@@ -35,31 +46,51 @@ function HomeScreen() {
         console.error(error)
       })
   }, [])
-languagesTemp = languages
 
-  function renderLanguageMenuByKey(item, setLanguageSelection) {
-    const languageIndex = languagesTemp.findIndex(
-      (element) => element.parentName === item
-    )
-    const languageContents = languagesTemp[languageIndex].contents
-    setLanguageSelection(languageContents)
-    history.push("/languageMenu")
-  }
-
-  function renderLanguageMenu(item, setLanguageSelection) {
-    const languageIndex = languages.findIndex(
-      (element) => element.parentName === item
-    )
-    const languageContents = languages[languageIndex].contents
-    setLanguageSelection(languageContents)
-    history.push("/languageMenu")
-  }
+  useEffect(() => {
+    if (languages && languages.length > 0) {
+      window.addEventListener("keyup", function (event) {
+        
+        event.preventDefault()
+      
+        switch (event.key) {
+          case "F13":renderLanguageMenu(languages[0].parentName, setLanguageSelection)
+          break
+          case "F14":renderLanguageMenu(languages[1].parentName, setLanguageSelection)
+          break
+          case "F15":renderLanguageMenu(languages[2].parentName, setLanguageSelection)
+          break
+          case "F16":renderLanguageMenu(languages[3].parentName, setLanguageSelection)
+          break
+          case "F17":renderLanguageMenu(languages[4].parentName, setLanguageSelection)
+          break
+          case "F18":renderLanguageMenu(languages[5].parentName, setLanguageSelection)
+          break
+          case "F19":renderLanguageMenu(languages[6].parentName, setLanguageSelection)
+          break
+          case "F20":renderLanguageMenu(languages[7].parentName, setLanguageSelection)
+          break
+          case "F21":renderLanguageMenu(languages[8].parentName, setLanguageSelection)
+          break
+          case "F22":renderLanguageMenu(languages[9].parentName, setLanguageSelection)
+          break 
+          case "F23":renderLanguageMenu(languages[10].parentName, setLanguageSelection)
+          break
+          case "F24":renderLanguageMenu(languages[11].parentName, setLanguageSelection)
+          break
+          
+          default:
+            return // Quit when this doesn't handle the key event.
+        }
+      
+      }, true)
+    }
+  }, [languages])
   
-
   return (
     <>
       <div className="grid-container">
-        {languages.map((language) => {
+        {languages && languages.map((language) => {
           return (            
             <button
               key={language.parentName}
@@ -76,45 +107,6 @@ languagesTemp = languages
           )
         })}
       </div>
-      <script>
-    {window.addEventListener("keyup", function (event) {
-  if (event.defaultPrevented) {
-    return // Do nothing if the event was already processed
-  }
-  switch (event.key) {
-    case "F13":renderLanguageMenuByKey(languagesTemp[0].parentName, setLanguageSelection)
-    break
-    case "F14":renderLanguageMenuByKey(languagesTemp[1].parentName,setLanguageSelection)
-    break
-    case "F15":renderLanguageMenuByKey(languagesTemp[2].parentName,setLanguageSelection)
-    break
-    case "F16":renderLanguageMenuByKey(languagesTemp[3].parentName,setLanguageSelection)
-    break
-    case "F17":renderLanguageMenuByKey(languagesTemp[4].parentName,setLanguageSelection)
-    break
-    case "F18":renderLanguageMenuByKey(languagesTemp[5].parentName,setLanguageSelection)
-    break
-    case "F19":renderLanguageMenuByKey(languagesTemp[6].parentName,setLanguageSelection)
-    break
-    case "F20":renderLanguageMenuByKey(languagesTemp[7].parentName,setLanguageSelection)
-    break
-    case "F21":renderLanguageMenuByKey(languagesTemp[8].parentName,setLanguageSelection)
-    break
-    case "F22":renderLanguageMenuByKey(languagesTemp[9].parentName,setLanguageSelection)
-    break
-    case "F23":renderLanguageMenuByKey(languagesTemp[10].parentName,setLanguageSelection)
-    break
-    case "F24":renderLanguageMenuByKey(languagesTemp[11].parentName,setLanguageSelection)
-    break
-    
-    default:
-      return // Quit when this doesn't handle the key event.
-  }
-
-  // Cancel the default action to avoid it being handled twice
-  event.preventDefault()
-}, true)}
-    </script>
     </>
   )
 }
