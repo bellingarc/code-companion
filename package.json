@@ -1,6 +1,7 @@
 {
   "name": "code-companion",
-  "version": "0.1.0",
+  "version": "0.2.0",
+  "description": "A graphical screen overlay system for a 'drag-and-drop' programming experience, code-companion is designed with accessibility in mind. For the neurologically damaged, the amputee, the slow typer - code-companion is YOUR companion.",
   "private": true,
   "main": "public/electron.js",
   "dependencies": {
