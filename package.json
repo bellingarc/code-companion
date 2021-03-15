@@ -4,7 +4,7 @@
   "version": "0.2.0",
   "description": "A graphical screen overlay system for a 'drag-and-drop' programming experience, code-companion is designed with accessibility in mind. For the neurodiverse - code-companion is YOUR companion.",
   "private": true,
-  "author":"Skarzold Bellingar",
+  "author": "Skarzold Bellingar",
   "main": "public/electron.js",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.9",
