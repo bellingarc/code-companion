@@ -97,6 +97,7 @@ function LanguageMenu({ languageSelection }) {
           )
         })}
       </div>
+      © 2021, Skarzold Bellingar
     </>
   )
 }

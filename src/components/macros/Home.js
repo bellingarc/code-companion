@@ -119,6 +119,7 @@ function HomeScreen() {
           )
         })}
       </div>
+      © 2021, Skarzold Bellingar
     </>
   )
 }
