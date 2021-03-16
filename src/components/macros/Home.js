@@ -101,6 +101,20 @@ function HomeScreen() {
   
   return (
     <>
+    <label class="container">Dyslexic Font
+    <input type="checkbox" />
+    <span class="checkmark"></span>
+  </label>
+  
+  <label class="container">Transparent
+    <input type="checkbox" />
+    <span class="checkmark"></span>
+  </label>
+  
+  <label class="container">Deprecated
+    <input type="checkbox" /> 
+    <span class="checkmark"></span>
+  </label>
       <div className="grid-container">
         {languages && languages.map((language) => {
           return (            

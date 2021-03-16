@@ -380,6 +380,7 @@ const languages = [
             final: false,
             type:[
               { typeName: "meta Tag", code: "<meta>", final: true },
+    
               { typeName: "charset", code: " charset=''", final: true },
               { typeName: "content", code: " content=''", final: true },
               { typeName: "http-equiv", code: " http-equiv=''", final: true },
@@ -453,6 +454,7 @@ const languages = [
         contentName: "xxx",
       },
     ],
+
   },
   {
     parentName: "C#",
@@ -482,7 +484,26 @@ const languages = [
     parentName: "Boilers",
     contents: [
       {
-        contentName: "xxx",
+        contentName: "Basic HTML",
+        final: true,
+        code: `<!doctype html>
+
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+        
+          <title>The HTML5 Herald</title>
+          <meta name="description" content="The HTML5 Herald">
+          <meta name="author" content="SitePoint">
+        
+          <link rel="stylesheet" href="css/styles.css?v=1.0">
+        
+        </head>
+        
+        <body>
+          <script src="js/scripts.js"></script>
+        </body>
+        </html>`,
       },
     ],
   },
