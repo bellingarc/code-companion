@@ -4,7 +4,7 @@
   "version": "0.2.0",
   "description": "A graphical screen overlay system for a 'drag-and-drop' programming experience, code-companion is designed with accessibility in mind. For the neurodiverse - code-companion is YOUR companion.",
   "private": true,
-  "author": "Skarzold Bellingar",
+  "author": "Clinton 'Skar' Bellingar",
   "main": "public/electron.js",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.9",
@@ -13,7 +13,6 @@
     "electron-is-dev": "^2.0.0",
     "electron-squirrel-startup": "^1.0.0",
     "firebase": "^8.2.10",
-    "mousetrap": "^1.6.5",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-router-dom": "^5.2.0",
@@ -23,11 +22,10 @@
   "scripts": {
     "dev": "concurrently -k \"npm start\" \"npm:electron\"",
     "electron": "wait-on tcp:3000 && electron .",
-    "start": "electron-forge start",
-    "build": "react-scripts build",
+    "start": "react-scripts start",
+    "buildr": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "make-mac": "npx @electron-forge/cli make --platform darwin",
     "package": "electron-forge package",
     "make": "electron-forge make"
   },
@@ -61,9 +59,7 @@
   },
   "config": {
     "forge": {
-      "packagerConfig": {
-        "icon": "./assets/icon"
-      },
+      "packagerConfig": {},
       "makers": [
         {
           "name": "@electron-forge/maker-squirrel",
@@ -72,10 +68,7 @@
           }
         },
         {
-          "name": "@electron-forge/maker-zip",
-          "platforms": [
-            "darwin"
-          ]
+          "name": "@electron-forge/maker-zip"
         },
         {
           "name": "@electron-forge/maker-deb",

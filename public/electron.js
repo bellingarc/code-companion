@@ -11,10 +11,11 @@ function createWindow() {
     alwaysOnTop:true,
     frame:true,
     webPreferences: {
-      nodeIntegration: true
+      nodeIntegration: true,
     }
+ 
   });
-
+  win.setAlwaysOnTop(true, "normal")
   // and load the index.html of the app.
   // win.loadFile("index.html");
   win.loadURL(
