@@ -1,3 +1,11 @@
+# Code Companion
+A graphical screen overlay system for a 'drag-and-drop' programming experience, code-companion is designed with accessibility in mind. For the neurodiverse - Code Companion is YOUR companion.
+
+With customizable keybinds linked to a list of languages and their elements/methods/attributes/commonly-used-boilerplates, Code Companion is an ease-of-access suite designed to give the power of programming to anyone - regardless of physical or cognitive disadvantage. 
+
+Code Companion is not a linter or an IDE: it will not make suggestions to the user about what code to use or how to use it - that's for the programmer to decide. Code Companion is an alternative input system reminiscent of macros that is independent of input device. Future versions of Code Companion will make more inclusive set-up options to allow the user a wider and more varied option of inputs and languages
+
+
 # Tech Stack
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and [Create Electron App](https://www.electronforge.io/) 
